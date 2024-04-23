@@ -14,7 +14,7 @@ namespace Infinite_Ship_Boombox
     {
         private const string mod_GUID = "Hackattack242.Infinite_Ship_Boombox";
         private const string mod_name = "Infinite_Ship_Boombox";
-        private const string mod_version = "0.0.1";
+        private const string mod_version = "1.0.0";
 
         private readonly Harmony harmony = new Harmony(mod_GUID);
 
