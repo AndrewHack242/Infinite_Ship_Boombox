@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GameNetcodeStuff;
 using HarmonyLib;
 
 namespace Infinite_Ship_Boombox.Patches
@@ -12,9 +13,9 @@ namespace Infinite_Ship_Boombox.Patches
     {
         [HarmonyPatch("Update")]
         [HarmonyPrefix]
-        static void patch_func(ref bool ___isInShipRoom, ref Item ___itemProperties)
+        static void patch_func(ref bool ___isInShipRoom, ref Item ___itemProperties, ref PlayerControllerB ___playerHeldBy)
         {
-            if (___isInShipRoom)
+            if (___isInShipRoom || (___playerHeldBy != null && ___playerHeldBy.isInHangarShipRoom))
             {
                 ___itemProperties.requiresBattery = false;
             }
