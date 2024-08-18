@@ -14,7 +14,7 @@ namespace Infinite_Ship_Boombox
     {
         private const string mod_GUID = "Hackattack242.Infinite_Ship_Boombox";
         private const string mod_name = "Infinite_Ship_Boombox";
-        private const string mod_version = "1.1.0";
+        private const string mod_version = "1.1.1";
 
         private readonly Harmony harmony = new Harmony(mod_GUID);
 
@@ -35,6 +35,8 @@ namespace Infinite_Ship_Boombox
             logger.LogInfo("Infinite Ship Boombox has awoken");
 
             harmony.PatchAll();
+
+            logger.LogInfo("Patches Complete");
         }
 
         internal static void LogDebug(string message)
